@@ -4,13 +4,20 @@
   <li>{{ person.lastName }}</li>
   <li>{{ person.age }}</li>
 </ul>
+<button @click.prevent="randomAge">Changer l'âge</button>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 const person = ref ({
-  firstName: 'Michael',
-  lastName: 'Jackson',
-  age:  50,
+  firstName: 'Pablo',
+  lastName: 'Escobar',
+  age:  30,
 })
+const randomAge = () => {
+  person.value = {
+    ...person.value,
+    age: Math.round(Math.random() * 100)
+  }
+}
 </script>
