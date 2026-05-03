@@ -15,9 +15,6 @@ const person = ref ({
   age:  30,
 })
 const randomAge = () => {
-  person.value = {
-    ...person.value,
-    age: Math.round(Math.random() * 100)
+  person.value.age = Math.round(Math.random() * 100)
   }
-}
 </script>
